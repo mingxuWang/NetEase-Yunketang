@@ -342,8 +342,8 @@
 					var peo = document.getElementsByClassName('con-right-peo');
 					var img = document.getElementsByClassName('con-right-img');
 					for(var n = 0;n<10;n++){
-						hot[n].innerText=i[n]['name'];
-						peo[n].innerText=i[n]['learnerCount'];
+						hot[n].innerHTML=i[n]['name'];
+						peo[n].innerHTML=i[n]['learnerCount'];
 						img[n].src=i[n]['smallPhotoUrl'];
 					}
 				}
@@ -367,10 +367,10 @@
 					var pri = document.getElementsByClassName('row-pri');
 					for(var n=0;n<i.list.length;n++){
 						img[n].src = i.list[n].middlePhotoUrl;
-						dis[n].innerText = i.list[n].description;
-						aut[n].innerText = i.list[n].provider;
-						stu[n].innerText = i.list[n].learnerCount;
-						pri[n].innerText = i.list[n].price;
+						dis[n].innerHTML = i.list[n].description;
+						aut[n].innerHTML = i.list[n].provider;
+						stu[n].innerHTML = i.list[n].learnerCount;
+						pri[n].innerHTML = i.list[n].price;
 					}
 
 				}
