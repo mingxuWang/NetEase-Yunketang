@@ -53,7 +53,41 @@ img{
 .top-banner{
 	width: 100%;
 	height: 460px;
+	overflow: hidden;
 }
+.top-banner ul li{
+	-webkit-animation: translate 5s linear infinite reverse both;
+}
+@-webkit-keyframes translate {
+	0%{
+		opacity: 0;
+	}
+	50%{
+		opacity: 1;
+	}
+	100%{
+		opacity: 0;
+	}
+}
+@keyframes translate {
+	0%{
+		opacity: 0;
+	}
+	10%{
+		opacity: 1;
+	}
+	90%{
+		opacity: 1;
+	}
+	100%{
+		opacity: 0;
+	}
+}
+
+
+
+
+
 .con-bar{
 	width: 100%;
 	height: 295px;
@@ -152,7 +186,17 @@ img{
 	list-style: none;
 	margin: 0;
 }
-
+.knowmore{
+	padding-top: 20px;
+}
+.knowmore a{
+	color: #21a557;
+	text-decoration: none;
+}
+.knowmore a:hover{
+	color: #21a557;
+	text-decoration: underline;
+}
 
 
 /* container*/

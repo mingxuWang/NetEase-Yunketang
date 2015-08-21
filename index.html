@@ -7,10 +7,10 @@
 </head>
 <body>
 	<div class="top">
-		<div class="top-bar">
+		<div id="top-bar" class="top-bar">
 			<div class="top-nav container">
-				网易云课堂微专业，帮助你掌握专业技能，令你求职或加薪多一份独特优势！<a href="#">立即查看></a>
-				<div class="right"><i class="icon"></i>　不再提醒</div>
+				网易云课堂微专业，帮助你掌握专业技能，令你求职或加薪多一份独特优势！<a href="http://study.163.com/" target="_blank">立即查看></a>
+				<div class="right button" onclick="dontremind()"><i class="icon"></i>　不再提醒</div>
 			</div>
 		</div>
 		<div class="top-main">
@@ -26,7 +26,7 @@
 		</div>
 		<div class="top-banner">
 			<ul>
-				<li><img src="image/banner1.jpg"></li>
+				<li><a id="banner-link" href="http://open.163.com/" target="_blank"><img id="banner" src="image/banner1.jpg"></a></li>
 			</ul>
 		</div>
 	</div>
@@ -37,7 +37,8 @@
 				<div class="bar-item">
 					<div class="bar-title">网易公开课</div>
 					<br>
-					<div class="bar-artical">推出国内外名校公开课，涉及广泛的学科，名校老师认真讲解深度剖析，网易视频公开课频道搭建起强有力的网络视频教学平台。</div>
+					<div class="bar-artical">推出国内外名校公开课，涉及广泛的学科，名校老师认真讲解深度剖析，网易视频公开课频道搭建起强有力的网络视频教学平台。<div class="knowmore"><a href="http://open.163.com/" target="_blank">了解更多></a></div></div>
+
 				</div>
 			</div>
 			<div class="bar-others">
@@ -45,7 +46,7 @@
 				<div class="bar-item">
 					<div class="bar-title">云课堂</div>
 					<br>
-					<div class="bar-artical">网易旗下大型在线学习平台，该平台面向学习者提供海量免费、优质课程,创新的个性化学习体验，自由开放的交流互动环境。</div>
+					<div class="bar-artical">网易旗下大型在线学习平台，该平台面向学习者提供海量免费、优质课程,创新的个性化学习体验，自由开放的交流互动环境。<div class="knowmore"><a href="http://study.163.com/" target="_blank">了解更多></a></div></div>
 				</div>
 			</div>
 			<div class="bar-others">
@@ -53,7 +54,7 @@
 				<div class="bar-item">
 					<div class="bar-title">中国大学MOOC</div>
 					<br>
-					<div class="bar-artical">是爱课程网携手云课堂打造的在线学习平台，每一个有提升愿望的人,都可以在这里学习中国最好的大学课程，学完还能获得认证证书。</div>
+					<div class="bar-artical">是爱课程网携手云课堂打造的在线学习平台，每一个有提升愿望的人,都可以在这里学习中国最好的大学课程，学完还能获得认证证书。<div class="knowmore"><a href="http://www.icourse163.org/" target="_blank">了解更多></a></div></div>
 				</div>
 			</div>
 		</div>
@@ -327,7 +328,33 @@
 
 	<script>
 
-		window.onload=function(){func_hot(); func_class_10();}
+		window.onload=function(){func_hot(); func_class_10();changepic();};
+
+		function changepic(){
+			var pic=document.getElementById('banner');
+			var link=document.getElementById('banner-link');
+			var picsrc=['image/banner1.jpg','image/banner2.jpg','image/banner3.jpg'];
+			var bannerlink=['http://open.163.com/','http://study.163.com/','http://www.icourse163.org/'];
+			var n=1;
+			setInterval(function(){
+				pic.src=picsrc[n];
+				link.href=bannerlink[n];
+				n=n+1;
+				if(n==3){
+					n=0;
+				}
+
+			},5000)
+		}
+
+		function dontremind(){
+			var hidden=document.getElementById('top-bar');
+			hidden.style.cssText='display:none'
+		}
+
+
+
+
 
 		function func_hot(){
 			var xml = new XMLHttpRequest();
@@ -347,7 +374,7 @@
 						img[n].src=i[n]['smallPhotoUrl'];
 					}
 				}
-			}
+			};
 			xml.send();
 		}
 
